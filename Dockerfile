@@ -1,4 +1,4 @@
-FROM ruby:2.3.3
+FROM ruby:2.3.4
 MAINTAINER Nestor G Pestelos Jr
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && apt-get -y install nodejs
