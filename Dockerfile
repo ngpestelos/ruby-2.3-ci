@@ -5,7 +5,12 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && apt-get -y install
 
 RUN npm install -g yarn
 
-ADD phantomjs-2.1.1-linux-x86_64.tar.bz2 /usr/local/share/
+RUN apt-get -y update
 
-RUN cd /usr/local/share && tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 &\
-  ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+RUN apt-get -y install libgconf-2-4 libnss3-dev
+
+RUN npm -g install chromedriver
+
+RUN ln -sf /usr/lib/node_modules/chromedriver/lib/chromedriver/chromedriver /usr/local/bin/chromedriver
+
+RUN apt-get -y install chromium
