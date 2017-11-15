@@ -55,5 +55,3 @@ RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.stor
   && ln -fs /opt/selenium/chromedriver-$CHROME_DRIVER_VERSION /usr/bin/chromedriver
 
 RUN ln -sf /usr/bin/google-chrome /usr/bin/chrome
-
-USER ruby
